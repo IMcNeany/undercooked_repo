@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
     private Quaternion rotationDirection;
+    
 	// Use this for initialization
 	void Start () {
 		
@@ -17,26 +18,9 @@ public class Movement : MonoBehaviour {
 
     void UpdateMovement()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-            transform.position += new Vector3(0, 5 * Time.deltaTime, 0);
-            rotationDirection = Quaternion.Euler(0, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            transform.position += new Vector3(0, -5 * Time.deltaTime, 0);
-            rotationDirection = Quaternion.Euler(0, 0, 180);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            transform.position += new Vector3(-5 * Time.deltaTime, 0, 0);
-            rotationDirection = Quaternion.Euler(0, 0, 90);
-        }
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            transform.position += new Vector3(5 * Time.deltaTime, 0, 0);
-            rotationDirection = Quaternion.Euler(0, 0, 270);
-        }
+        InputManager input = GetComponent<InputManager>();
+        Vector3 movement = new Vector3(input.getHorizontal(), input.getVertical(), 0);
+        transform.position += movement * 5 * Time.deltaTime;
         transform.rotation = rotationDirection;
     }
 }
