@@ -1,0 +1,5 @@
+red    -> food spawn
+green  -> chopping/prep area
+yellow -> plate spawn
+purple -> cook/hob area
+blue   -> service area
