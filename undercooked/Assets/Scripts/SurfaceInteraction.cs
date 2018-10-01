@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SurfaceInteraction : MonoBehaviour {
-   public bool itemHeld = false;
+    public bool itemHeld = false;
     Transform item;
-
+    Pickup pickup;
     bool startTimer;
     float timer = 0.5f;
     float time = 0.0f;
@@ -14,7 +14,11 @@ public class SurfaceInteraction : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		if(GetComponent<Pickup>())
+        {
+            pickup = GetComponent<Pickup>();
+            itemHeld = true;
+        }
 	}
 	
 	// Update is called once per frame
@@ -48,10 +52,10 @@ public class SurfaceInteraction : MonoBehaviour {
         Player player = collider.GetComponent<Player>();
         if (interactable)
         {
-            if (Input.GetKey(KeyCode.E))
+            //can't take an item
+            if (player != null)
             {
-                //can't take an item
-                if (player != null)
+                if (player.action)
                 {
                     if (itemHeld && player.GetItemHeld())
                     {
@@ -65,6 +69,7 @@ public class SurfaceInteraction : MonoBehaviour {
                     }
                     if (!itemHeld && player.GetItemHeld())
                     {
+
 
                         item = player.transform.GetChild(0);
                         item.SetParent(this.gameObject.transform);
@@ -89,7 +94,6 @@ public class SurfaceInteraction : MonoBehaviour {
                         startTimer = true;
                         return;
                     }
-
                 }
             }
         }

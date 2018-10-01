@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
 
     private float Horizontal = 0.0f;
     private float Vertical = 0.0f;
-
+    public bool actionKey;
     // Use this for initialization
     void Start()
     {
@@ -31,6 +31,8 @@ public class InputManager : MonoBehaviour
             Horizontal = Input.GetAxis("Joy_Horizontal_" + playerNumber);
             Vertical = Input.GetAxis("Joy_Vertical_" + playerNumber);
         }
+
+        actionKey = Input.GetButton("Action_" + playerNumber);
 
         Debug.Log(new Vector2(Horizontal, Vertical));
     }

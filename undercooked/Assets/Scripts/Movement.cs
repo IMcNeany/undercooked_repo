@@ -5,11 +5,11 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
     private Quaternion rotationDirection;
-    
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private InputManager input;
+    // Use this for initialization
+    void Start () {
+       input = GetComponent<InputManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {

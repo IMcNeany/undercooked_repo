@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-   
+    private InputManager input;
     public bool itemHeld;
+    public bool action;
+    private Pickup player_pickup;
 	// Use this for initialization
 	void Start ()
     {
-		
-	}
+        input = GetComponent<InputManager>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        InputManager input = GetComponent<InputManager>();
+        if (input.actionKey)
+        {
+            action = true;
+        }
+        else
+        {
+            action = false;
+        }
+    }
 
     public void SetItemHeld(bool item)
     {
