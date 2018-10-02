@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SurfaceInteraction : MonoBehaviour {
     public bool itemHeld = false;
-    Transform item;
+    protected Transform item;
     Pickup pickup;
     bool startTimer;
     float timer = 0.5f;
