@@ -32,9 +32,9 @@ public class InputManager : MonoBehaviour
             Vertical = Input.GetAxis("Joy_Vertical_" + playerNumber);
         }
 
-        actionKey = Input.GetButton("Action_" + playerNumber);
+        actionKey = Input.GetButtonDown("Action_" + playerNumber);
 
-        Debug.Log(new Vector2(Horizontal, Vertical));
+
     }
 
     public float getHorizontal()

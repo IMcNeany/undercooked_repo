@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     private InputManager input;
+    public Pickup_Action pickup_action;
     public bool itemHeld;
     public bool action;
     private Pickup player_pickup;
@@ -36,4 +37,6 @@ public class Player : MonoBehaviour {
     {
         return itemHeld;
     }
+
+
 }
