@@ -11,14 +11,30 @@ public class PrepareSurface : ItemSurface {
         {
             if(current_item.GetComponent<FoodItem>())
             {
-                FoodItem item = current_item.GetComponent<FoodItem>();
-                if(item.prepared)
+                FoodItem food_item = current_item.GetComponent<FoodItem>();
+
+                switch (food_item.type)
+                {
+                    case FoodType.Bun:
+                    case FoodType.Chips:
+                    case FoodType.Fish:
+                    case FoodType.Meat:
+                        //cant prepare these items, so pick em up
+                        return true;
+                    case FoodType.Lettuce:
+                    case FoodType.Mushroom:
+                    case FoodType.Onion:
+                    case FoodType.Tomato:
+                        //can prepare these items so continue
+                        break;
+                }
+                if (food_item.prepared)
                 {
                     return true;
                 }
                 else
                 {
-                    item.PrepareFood();
+                    food_item.PrepareFood();
                     return false;
                 }
             }

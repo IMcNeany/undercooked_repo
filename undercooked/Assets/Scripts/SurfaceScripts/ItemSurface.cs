@@ -6,7 +6,7 @@ public class ItemSurface : MonoBehaviour {
 
     public GameObject current_item;
 
-    public void Update()
+    public virtual void Update()
     {
         if(current_item)
         {

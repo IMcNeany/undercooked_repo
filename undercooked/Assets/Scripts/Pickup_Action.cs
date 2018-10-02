@@ -20,11 +20,7 @@ public class Pickup_Action : MonoBehaviour {
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ItemSurface>())
-        {
-            Debug.Log("yeet");
-        }
-            if (player.action)
+        if (player.action)
         {
             if (collision.gameObject.GetComponent<ItemSurface>())
             {
