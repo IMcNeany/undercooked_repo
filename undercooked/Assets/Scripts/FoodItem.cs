@@ -19,7 +19,7 @@ public class FoodItem : Pickup {
 
     public FoodType type;
     public bool prepared = false;
-    public float prepare_timer = 3.0f;
+    public int prepare_counter = 3;
 
     public Sprite unpreped_sprite;
     public Sprite preped_sprite;
@@ -31,15 +31,14 @@ public class FoodItem : Pickup {
         pickup_sprite = preped_sprite;
     }
 
-    public void Interact()
+    public void PrepareFood()
     {
         if(!prepared)
         {
-            prepare_timer -= 1 * Time.deltaTime;
-            if(prepare_timer <= 0.0f)
+            prepare_counter -= 1;
+            if(prepare_counter <= 0)
             {
                 SetPrepared();
-                prepare_timer = 0.0f;
             }
         }
     }

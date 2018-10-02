@@ -20,24 +20,33 @@ public class Pickup_Action : MonoBehaviour {
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-
-        if(collision.gameObject.GetComponent<Pickup>())
+        if (collision.gameObject.GetComponent<ItemSurface>())
         {
-            
+            Debug.Log("yeet");
+        }
             if (player.action)
+        {
+            if (collision.gameObject.GetComponent<ItemSurface>())
             {
-                if (pickup_object == null)
+                ItemSurface surface = collision.gameObject.GetComponent<ItemSurface>();
+       
+                if (surface.current_item == null && pickup_object != null)
                 {
-                    pickup_object = collision.gameObject;
-                }
-                else
-                {
+                    //if you want to place down an item
+                    surface.AddItem(pickup_object);
                     pickup_object = null;
                 }
-                
+                else if (surface.current_item != null && pickup_object == null)
+                {
+                    //if you want to interact with/take an item
+                    if(surface.Interact())
+                    {
+                        //if interact returns true you can take the item instead of interacting with it
+                        pickup_object = surface.current_item;
+                        surface.current_item = null;
+                    }
+                }
             }
-
         }
     }
-
 }
