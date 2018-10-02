@@ -6,9 +6,14 @@ public class Movement : MonoBehaviour {
 
     private Quaternion rotationDirection;
     private InputManager input;
+    private Rigidbody2D rb2d;
+    private Vector2 movement;
+    public float speed = 5.0f;
+
     // Use this for initialization
     void Start () {
        input = GetComponent<InputManager>();
+        rb2d = gameObject.GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
@@ -19,8 +24,14 @@ public class Movement : MonoBehaviour {
     void UpdateMovement()
     {
         InputManager input = GetComponent<InputManager>();
-        Vector3 movement = new Vector3(input.getHorizontal(), input.getVertical(), 0);
-        transform.position += movement * 5 * Time.deltaTime;
+        movement = new Vector2(input.getHorizontal() * speed, input.getVertical() * speed);
+     //   transform.position += movement * 5 * Time.deltaTime;
         transform.rotation = rotationDirection;
     }
+
+    private void FixedUpdate()
+    {
+        rb2d.MovePosition(rb2d.position + movement * Time.fixedDeltaTime);
+    }
 }
+
