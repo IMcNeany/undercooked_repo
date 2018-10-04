@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    private InputManager input;
+    public AudioClip pickup;
+    public AudioClip drop;
+
     public Pickup_Action pickup_action;
     public bool itemHeld;
     public bool action;
+
+    private InputManager input;
     private Pickup player_pickup;
 	// Use this for initialization
 	void Start ()
@@ -37,6 +41,4 @@ public class Player : MonoBehaviour {
     {
         return itemHeld;
     }
-
-
 }
