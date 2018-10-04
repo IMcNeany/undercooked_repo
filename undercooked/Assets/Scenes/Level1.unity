@@ -614,6 +614,26 @@ Prefab:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 82684364568383654, guid: 36738dad241dfc04890e6ac1777dc416,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 82684364568383654, guid: 36738dad241dfc04890e6ac1777dc416,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114077985053221596, guid: 36738dad241dfc04890e6ac1777dc416,
+        type: 2}
+      propertyPath: pickup
+      value: 
+      objectReference: {fileID: 8300000, guid: cf97fd04086b099438e29cd7fdded0bd, type: 3}
+    - target: {fileID: 114077985053221596, guid: 36738dad241dfc04890e6ac1777dc416,
+        type: 2}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 8300000, guid: 104ec20dda62cab40b6a1b303f5671d5, type: 3}
     m_RemovedComponents:
     - {fileID: 61084190722749558, guid: 36738dad241dfc04890e6ac1777dc416, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 36738dad241dfc04890e6ac1777dc416, type: 2}
