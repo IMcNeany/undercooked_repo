@@ -41,9 +41,9 @@ public class SpawnObject : MonoBehaviour {
                 {
 
                     //set player to holding item
-                    GameObject item = Instantiate(itemPrefab, player.transform.position, player.transform.rotation);
-                    item.transform.SetParent(player.transform);
-                    item.transform.position = new Vector3(item.transform.position.x, item.transform.position.y, -1);
+                    //GameObject item = Instantiate(itemPrefab, player.transform.position, player.transform.rotation);
+                    //item.transform.SetParent(player.transform);
+                    //item.transform.position = new Vector3(item.transform.position.x, item.transform.position.y, -1);
 
                     player.SetItemHeld(true);
                 }
@@ -57,4 +57,11 @@ public class SpawnObject : MonoBehaviour {
     void Update () {
 		
 	}
+
+    //edited item spawn to work with spawnsurface
+    public GameObject SpawnItem()
+    {
+        GameObject item = Instantiate(itemPrefab, transform.position, transform.rotation) as GameObject;
+        return item;
+    }
 }
