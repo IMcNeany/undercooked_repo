@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ServiceSurface : ItemSurface {
 
-    public override void AddItem(GameObject obj)
+    public override bool AddItem(GameObject obj)
     {
-        CheckItem(obj);
+        return CheckItem(obj);
     }
 
-    public void CheckItem(GameObject obj)
+    public bool CheckItem(GameObject obj)
     {
         if(obj.GetComponent<Utensil>())
         {
@@ -17,17 +17,16 @@ public class ServiceSurface : ItemSurface {
 
             switch(utensil.type)
             {
-
                 case UtensilType.Pan:
-                    break;
                 case UtensilType.Pot:
-                    break;
-
+                    return false;
+                   
                 case UtensilType.Plate:
                     current_item = obj;
-                    break;    
+                    return true; 
             }
         }
+        return false;
     }
 
     public override void Update()

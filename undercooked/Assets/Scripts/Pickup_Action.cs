@@ -31,10 +31,12 @@ public class Pickup_Action : MonoBehaviour {
                 if (surface.current_item == null && pickup_object != null)
                 {
                     //if you want to place down an item
-                    surface.AddItem(pickup_object);
-                    pickup_object = null;
-                    audio.clip = player.drop;
-                    audio.Play();
+                    if(surface.AddItem(pickup_object))
+                    {
+                        pickup_object = null;
+                        audio.clip = player.drop;
+                        audio.Play();
+                    }
                 }
                 else
                 {

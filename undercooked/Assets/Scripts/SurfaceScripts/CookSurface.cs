@@ -6,6 +6,16 @@ public class CookSurface : ItemSurface {
 
     //no interact because you can pickup/place items/utensils whenever, the cooking happens when a utensil with food is added to the surface
 
+    public override bool AddItem(GameObject obj)
+    {
+        if(obj.GetComponent<Utensil>())
+        {
+            base.AddItem(obj);
+            return true;
+        }
+        return false;
+    }
+
     public override void Update()
     {
         base.Update();
@@ -13,23 +23,26 @@ public class CookSurface : ItemSurface {
     }
     public void CookItems()
     {
-        if(current_item.GetComponent<Utensil>())
+        if (current_item)
         {
-            Utensil current_utensil = current_item.GetComponent<Utensil>();
-
-            if(current_utensil.current_food_items.Count > 0)
+            if (current_item.GetComponent<Utensil>())
             {
-                //start cooking if food is in the utensil
-                current_utensil.cook_time -= 1 * Time.deltaTime;
-                if (current_utensil.cook_time <= 0.0f)
+                Utensil current_utensil = current_item.GetComponent<Utensil>();
+
+                if (current_utensil.current_food_items.Count > 0)
                 {
-                    current_utensil.cooked = true;
+                    //start cooking if food is in the utensil
+                    current_utensil.cook_time -= 1 * Time.deltaTime;
+                    if (current_utensil.cook_time <= 0.0f)
+                    {
+                        current_utensil.cooked = true;
+                    }
+                    else if (current_utensil.cook_time <= -5.0f)
+                    {
+                        current_utensil.burnt = true;
+                    }
                 }
-                else if(current_utensil.cook_time <= -5.0f)
-                {
-                    current_utensil.burnt = true;
-                }
-            } 
+            }
         }
     }
 }

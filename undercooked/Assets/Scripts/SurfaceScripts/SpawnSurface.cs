@@ -10,9 +10,10 @@ public class SpawnSurface : ItemSurface {
     {
         spawn_object_script = GetComponent<SpawnObject>();
     }
-    public override void AddItem(GameObject obj)
+    public override bool AddItem(GameObject obj)
     {
         //dont wanna add items to a item spawn, only take so we take away base.additem
+        return false;
     }
 
     public override bool Interact()

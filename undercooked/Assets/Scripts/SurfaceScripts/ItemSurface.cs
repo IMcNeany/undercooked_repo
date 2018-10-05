@@ -14,10 +14,11 @@ public class ItemSurface : MonoBehaviour {
         }
     }
 
-    public virtual void AddItem(GameObject obj)
+    public virtual bool AddItem(GameObject obj)
     {
         current_item = obj;
         current_item.transform.position = transform.position;
+        return true;
     }
 
     public virtual bool Interact()
