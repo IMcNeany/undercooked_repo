@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4394629314845810}
   - component: {fileID: 61825408241171376}
   - component: {fileID: 212516622246481482}
-  - component: {fileID: 114785831799233000}
+  - component: {fileID: 114515159824111566}
   m_Layer: 0
   m_Name: counter-top
   m_TagString: Untagged
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865037724623430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 4.5, z: -1}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: -32, y: 25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
---- !u!114 &114785831799233000
+--- !u!114 &114515159824111566
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,10 +75,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1865037724623430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ec94675141bd2449cb2717f0df7a48, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a676cd98b66d6c42b506989050d9930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemHeld: 0
+  current_item: {fileID: 0}
 --- !u!212 &212516622246481482
 SpriteRenderer:
   m_ObjectHideFlags: 1
