@@ -31,7 +31,9 @@ public class Movement : MonoBehaviour {
         }
 
         if (movement != Vector2.zero) {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, movement);
+            Vector3 eulerRotation = Quaternion.LookRotation(Vector3.forward, movement).eulerAngles;
+            eulerRotation.z = Mathf.Round(eulerRotation.z / 90) * 90;
+            transform.rotation = Quaternion.Euler(eulerRotation);
         }
     }
 
