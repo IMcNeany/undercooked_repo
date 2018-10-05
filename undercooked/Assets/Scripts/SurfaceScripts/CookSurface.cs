@@ -10,8 +10,11 @@ public class CookSurface : ItemSurface {
     {
         if(obj.GetComponent<Utensil>())
         {
-            base.AddItem(obj);
-            return true;
+            if (obj.GetComponent<Utensil>().type != UtensilType.Plate)
+            {
+                base.AddItem(obj);
+                return true;
+            }
         }
         return false;
     }
@@ -28,16 +31,16 @@ public class CookSurface : ItemSurface {
             if (current_item.GetComponent<Utensil>())
             {
                 Utensil current_utensil = current_item.GetComponent<Utensil>();
-
+                
                 if (current_utensil.current_food_items.Count > 0)
                 {
                     //start cooking if food is in the utensil
-                    current_utensil.cook_time -= 1 * Time.deltaTime;
-                    if (current_utensil.cook_time <= 0.0f)
+                    current_utensil.current_cooking_time += 1 * Time.deltaTime;
+                    if (current_utensil.current_cooking_time >= current_utensil.cook_time)
                     {
                         current_utensil.cooked = true;
                     }
-                    else if (current_utensil.cook_time <= -5.0f)
+                    else if (current_utensil.current_cooking_time >= current_utensil.burnt_timer)
                     {
                         current_utensil.burnt = true;
                     }

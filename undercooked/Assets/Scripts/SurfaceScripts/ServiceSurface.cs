@@ -13,7 +13,7 @@ public class ServiceSurface : ItemSurface {
     {
         if(obj.GetComponent<Utensil>())
         {
-            Utensil utensil = current_item.GetComponent<Utensil>();
+            Utensil utensil = obj.GetComponent<Utensil>();
 
             switch(utensil.type)
             {
@@ -22,8 +22,12 @@ public class ServiceSurface : ItemSurface {
                     return false;
                    
                 case UtensilType.Plate:
-                    current_item = obj;
-                    return true; 
+                    if(utensil.current_food_items.Count > 0)
+                    {
+                        current_item = obj;
+                        return true;
+                    }
+                    return false;
             }
         }
         return false;

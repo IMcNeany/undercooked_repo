@@ -17,7 +17,6 @@ public class SpawnObject : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("player in");
         CheckObjectHolding(collision);
     }
 
