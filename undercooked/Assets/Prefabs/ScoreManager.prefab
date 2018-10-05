@@ -61,7 +61,7 @@ MonoBehaviour:
   itemTest: {fileID: 0}
   addScore: 0
   uiText: {fileID: 0}
-  mainTimer: 100
+  mainTimer: 180
   gameOver: 0
   gameUI: {fileID: 0}
   endCard: {fileID: 0}
