@@ -25,12 +25,14 @@ public class Movement : MonoBehaviour {
     {
         InputManager input = GetComponent<InputManager>();
         movement = new Vector2(input.getHorizontal() * speed, input.getVertical() * speed);
-        if(movement == Vector2.zero)
+        if (movement == Vector2.zero)
         {
             rb2d.velocity = Vector2.zero;
         }
-     //   transform.position += movement * 5 * Time.deltaTime;
-        transform.rotation = rotationDirection;
+
+        if (movement != Vector2.zero) {
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, movement);
+        }
     }
 
     private void FixedUpdate()
