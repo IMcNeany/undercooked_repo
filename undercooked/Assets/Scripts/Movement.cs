@@ -25,12 +25,16 @@ public class Movement : MonoBehaviour {
     {
         InputManager input = GetComponent<InputManager>();
         movement = new Vector2(input.getHorizontal() * speed, input.getVertical() * speed);
-        if(movement == Vector2.zero)
+        if (movement == Vector2.zero)
         {
             rb2d.velocity = Vector2.zero;
         }
-     //   transform.position += movement * 5 * Time.deltaTime;
-        transform.rotation = rotationDirection;
+
+        if (movement != Vector2.zero) {
+            Vector3 eulerRotation = Quaternion.LookRotation(Vector3.forward, movement).eulerAngles;
+            eulerRotation.z = Mathf.Round(eulerRotation.z / 90) * 90;
+            transform.rotation = Quaternion.Euler(eulerRotation);
+        }
     }
 
     private void FixedUpdate()
