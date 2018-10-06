@@ -28,8 +28,6 @@ public class CuttingPrep : SurfaceInteraction
         if (itemHeld && food.prepared == false)
         {
             progressBar.SetActive(true);
-            
-
         }
         else if (itemHeld && food.prepared == true)
         {

@@ -16,10 +16,10 @@ public class SpawnSurface : ItemSurface {
         return false;
     }
 
-    public override bool Interact()
+    public override bool Interact(GameObject obj)
     {
         current_item = spawn_object_script.SpawnItem();
-        return base.Interact();
+        return base.Interact(obj);
     }
 
 

@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class PrepareSurface : ItemSurface {
 
-
-    public override bool Interact()
+    public override bool AddItem(GameObject obj)
     {
-        if(current_item)
+        if(!obj.GetComponent<FoodItem>())
         {
-            if(current_item.GetComponent<FoodItem>())
+            return false;
+        }
+        else
+        {
+            return base.AddItem(obj);
+        }
+    }
+
+    public override bool Interact(GameObject obj)
+    {
+        if (current_item)
+        {
+            if (current_item.GetComponent<FoodItem>())
             {
                 FoodItem food_item = current_item.GetComponent<FoodItem>();
 
                 switch (food_item.type)
                 {
                     case FoodType.Bun:
-                    case FoodType.Chips:
-                    case FoodType.Fish:
                     case FoodType.Meat:
                         //cant prepare these items, so pick em up
                         return true;
