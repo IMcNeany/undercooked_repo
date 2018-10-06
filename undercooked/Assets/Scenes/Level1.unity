@@ -2791,6 +2791,7 @@ MonoBehaviour:
     allowed: 1
   current_food_items: []
   cook_time: 10
+  current_cooking_time: 0
   cooked: 0
   burnt: 0
   burnt_timer: -5
@@ -4075,7 +4076,7 @@ Prefab:
     - target: {fileID: 224424912783119498, guid: b7956f68206ce514085fd5d4fd8230c9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 190
+      value: 223.79999
       objectReference: {fileID: 0}
     - target: {fileID: 224424912783119498, guid: b7956f68206ce514085fd5d4fd8230c9,
         type: 2}
@@ -4085,7 +4086,7 @@ Prefab:
     - target: {fileID: 224645521756770524, guid: b7956f68206ce514085fd5d4fd8230c9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 160
+      value: 193.79999
       objectReference: {fileID: 0}
     - target: {fileID: 224645521756770524, guid: b7956f68206ce514085fd5d4fd8230c9,
         type: 2}
@@ -4095,12 +4096,12 @@ Prefab:
     - target: {fileID: 224938144518894000, guid: b7956f68206ce514085fd5d4fd8230c9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 190
+      value: 223.79999
       objectReference: {fileID: 0}
     - target: {fileID: 224130735240121304, guid: b7956f68206ce514085fd5d4fd8230c9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 168
+      value: 201.8
       objectReference: {fileID: 0}
     - target: {fileID: 224938144518894000, guid: b7956f68206ce514085fd5d4fd8230c9,
         type: 2}
