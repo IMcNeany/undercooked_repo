@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ServiceSurface : ItemSurface {
 
+    public ServiceGoal service_goal;
+
+    public void Start()
+    {
+        service_goal = GameObject.Find("ScoreManager").GetComponent<ServiceGoal>();
+    }
+
     public override bool AddItem(GameObject obj)
     {
         return CheckItem(obj);
@@ -38,7 +45,19 @@ public class ServiceSurface : ItemSurface {
         base.Update();
         if(current_item)
         {
-            //code here to check order for items they pass in and assign points
+            if (current_item.GetComponent<Utensil>())
+            {
+                if(service_goal.CheckAddedItem(current_item.GetComponent<Utensil>()))
+                {
+                    Debug.Log("yeet");
+                    Destroy(current_item);
+                }
+                else
+                {
+                    Debug.Log("Nope");
+                    Destroy(current_item);
+                }
+            }
         }
     }
 }
