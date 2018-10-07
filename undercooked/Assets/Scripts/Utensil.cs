@@ -31,15 +31,26 @@ public class Utensil : Pickup {
     {
         for(int i = 0; i < current_food_items.Count; i++)
         {
-            current_food_items[i].gameObject.transform.position = transform.position;
-        }
+            if(current_food_items[i])
+            {
+                current_food_items[i].gameObject.transform.position = transform.position;
+            }
+        }     
     }
+
+    private void Start()
+    {
+        current_food_items.Sort(new CompareFoodItem());
+    }
+
 
     public bool AddFood(FoodItem item)
     {
         if (current_food_items.Count < 3)
         {
             current_food_items.Add(item);
+            item.gameObject.transform.parent = transform;
+            current_food_items.Sort(new CompareFoodItem());
             return true;
         }
         return false;
@@ -53,5 +64,16 @@ public class Utensil : Pickup {
     public UtensilType GetUtensilType(Utensil utensil)
     {
         return utensil.type;
+    }
+
+    class CompareFoodItem : IComparer<FoodItem>
+    {
+        public int Compare(FoodItem i1, FoodItem i2)
+        {
+            int type1 = i1 == null ? int.MinValue : (int)i1.type;
+            int type2 = i2 == null ? int.MinValue : (int)i2.type;
+
+            return type1.CompareTo(type2);
+        }
     }
 }

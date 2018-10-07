@@ -18,7 +18,7 @@ public class FoodItem : Pickup {
     public FoodType type;
     public bool prepared = false;
     public int prepare_counter = 3;
-
+    private int current_prepared = 0;
     public Sprite unpreped_sprite;
     public Sprite preped_sprite;
 
@@ -33,8 +33,8 @@ public class FoodItem : Pickup {
     {
         if(!prepared)
         {
-            prepare_counter -= 1;
-            if(prepare_counter <= 0)
+            current_prepared += 1;
+            if(current_prepared >= prepare_counter)
             {
                 SetPrepared();
             }
