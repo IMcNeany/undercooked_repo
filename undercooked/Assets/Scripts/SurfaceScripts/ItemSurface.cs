@@ -36,6 +36,17 @@ public class ItemSurface : MonoBehaviour {
                         {
                             return true;
                         }
+                        
+                        return false;
+                    }
+
+                    if(obj.GetComponent<Utensil>())
+                    {
+                        if(UtensilToUtensil(obj,current_item))
+                        {
+                            return true;
+                        }
+
                         return false;
                     }
                     
@@ -53,6 +64,7 @@ public class ItemSurface : MonoBehaviour {
     {
         FoodItem food = food_obj.GetComponent<FoodItem>();
         Utensil utensil = utensil_obj.GetComponent<Utensil>();
+
         if(utensil.allowed_foods[(int)food.type].allowed == true)
         {
             if(utensil.type == UtensilType.Plate)
@@ -74,7 +86,7 @@ public class ItemSurface : MonoBehaviour {
             }
             else if (utensil.type == UtensilType.Pot)
             {
-                if(food.prepared == false)
+                if(food.prepared == true)
                 {
                     if (utensil.AddFood(food))
                     {
@@ -85,4 +97,30 @@ public class ItemSurface : MonoBehaviour {
         }
         return false;
     }
+
+    public bool UtensilToUtensil(GameObject pickup_obj, GameObject surface_obj)
+    {
+        Utensil utensil_pickup = pickup_obj.GetComponent<Utensil>();
+        Utensil utensil_surface = surface_obj.GetComponent<Utensil>();
+
+        if(utensil_surface.type == UtensilType.Plate)
+        {
+            for (int i = 0; i < utensil_pickup.current_food_items.Count; i++)
+            {
+                if (!utensil_pickup.current_food_items[i].cooked)
+                {
+                    return false;
+                }
+                else
+                {
+                    utensil_surface.AddFood(utensil_pickup.current_food_items[i]);
+                    utensil_pickup.current_food_items.RemoveAt(i);
+                }
+            }
+            utensil_pickup.ResetCookValues();
+            return false;
+        }
+        return false;
+    }
 }
+

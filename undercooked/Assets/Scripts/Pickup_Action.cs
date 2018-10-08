@@ -48,6 +48,7 @@ public class Pickup_Action : MonoBehaviour {
                     if (surface.Interact(pickup_object))
                     {
                         //if interact returns true you take the item instead of interacting with it
+                        
                         pickup_object = surface.current_item;
                         surface.current_item = null;
                         audio.clip = player.pickup;

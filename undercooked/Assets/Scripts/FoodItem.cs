@@ -17,6 +17,8 @@ public class FoodItem : Pickup {
 
     public FoodType type;
     public bool prepared = false;
+    public bool cooked = false;
+    public bool burnt = false;
     public int prepare_counter = 3;
     private int current_prepared = 0;
     public Sprite unpreped_sprite;

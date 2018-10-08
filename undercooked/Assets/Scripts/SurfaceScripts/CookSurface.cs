@@ -8,7 +8,8 @@ public class CookSurface : ItemSurface {
 
     public override bool AddItem(GameObject obj)
     {
-        if(obj.GetComponent<Utensil>())
+        
+        if (obj.GetComponent<Utensil>())
         {
             if (obj.GetComponent<Utensil>().type != UtensilType.Plate)
             {
@@ -18,6 +19,7 @@ public class CookSurface : ItemSurface {
         }
         return false;
     }
+
 
     public override void Update()
     {
@@ -38,11 +40,18 @@ public class CookSurface : ItemSurface {
                     current_utensil.current_cooking_time += 1 * Time.deltaTime;
                     if (current_utensil.current_cooking_time >= current_utensil.cook_time)
                     {
-                        current_utensil.cooked = true;
+                        for(int i = 0; i < current_utensil.current_food_items.Count; i++)
+                        {
+                            current_utensil.current_food_items[i].cooked = true;
+                          
+                        }
                     }
-                    else if (current_utensil.current_cooking_time >= current_utensil.burnt_timer)
+                    if (current_utensil.current_cooking_time >= current_utensil.burnt_timer)
                     {
-                        current_utensil.burnt = true;
+                        for(int i = 0; i < current_utensil.current_food_items.Count; i++)
+                        {
+                            current_utensil.current_food_items[i].burnt = true;
+                        }
                     }
                 }
             }

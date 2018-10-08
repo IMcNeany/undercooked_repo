@@ -23,8 +23,6 @@ public class Utensil : Pickup {
     public List<FoodItem> current_food_items;
     public float cook_time = 10.0f;
     public float current_cooking_time = 0.0f;
-    public bool cooked = false;
-    public bool burnt = false;
     public float burnt_timer = 15.0f;
 
     public void Update()
@@ -46,7 +44,7 @@ public class Utensil : Pickup {
 
     public bool AddFood(FoodItem item)
     {
-        if (current_food_items.Count < 3)
+        if (current_food_items.Count < 4)
         {
             current_food_items.Add(item);
             item.gameObject.transform.parent = transform;
@@ -75,5 +73,10 @@ public class Utensil : Pickup {
 
             return type1.CompareTo(type2);
         }
+    }
+
+    public void ResetCookValues()
+    {
+        current_cooking_time = 0.0f;
     }
 }

@@ -48,6 +48,7 @@ public class ServiceGoal : MonoBehaviour {
                     {
                         if (item.current_food_items[y].type != goal_list[i].current_food_items[y].type)
                         {
+                            RemoveGoalItem(i);
                             return false;
                         }
                     }
@@ -56,6 +57,11 @@ public class ServiceGoal : MonoBehaviour {
             }
         }
         return false;
+    }
+
+    public void RemoveGoalItem(int num)
+    {
+        goal_list.RemoveAt(num);
     }
 
 }
