@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4834284610767140}
   - component: {fileID: 61743546955369076}
   - component: {fileID: 212650288047725176}
-  - component: {fileID: 114164898855947336}
+  - component: {fileID: 114669322929091512}
   m_Layer: 0
   m_Name: CookingPrep
   m_TagString: Untagged
@@ -81,22 +81,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281094036256074}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4298157541998826}
   m_Father: {fileID: 4834284610767140}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!4 &4834284610767140
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1859043163412192}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -12, y: -35, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 8, y: -35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.19999999}
   m_Children:
   - {fileID: 4347834500465952}
@@ -128,18 +128,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
---- !u!114 &114164898855947336
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1859043163412192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e242cc54935fcb34286670137ee46b44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  current_item: {fileID: 0}
 --- !u!114 &114481621327896672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,6 +139,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd9f6c916220ab4e8f56f07f59d4950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114669322929091512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859043163412192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e242cc54935fcb34286670137ee46b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_item: {fileID: 0}
+  progress_bar: {fileID: 114481621327896672}
 --- !u!212 &212316508695245656
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -187,7 +188,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 0cec01e4086d2224cb28bf227fd83692, type: 3}
-  m_Color: {r: 0.17177814, g: 0.99215686, b: 0.05098037, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

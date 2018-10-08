@@ -17,7 +17,7 @@ public class ProgressionBar : MonoBehaviour {
 	void Update () {
         if (this.gameObject.activeSelf)
         {
-            if (progress > 0.9)
+            if (progress > 1)
             {
                 barColour.color = Color.green;
             }
@@ -32,7 +32,7 @@ public class ProgressionBar : MonoBehaviour {
     public void CalculateProgress(float number,float total)
     {
         //progress calculation left in 0. not percentage
-        progress = number / total;
+        progress =  number / total;
 
     }
 }

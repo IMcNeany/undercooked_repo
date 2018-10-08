@@ -5,7 +5,7 @@ using UnityEngine;
 public class CookSurface : ItemSurface {
 
     //no interact because you can pickup/place items/utensils whenever, the cooking happens when a utensil with food is added to the surface
-
+    public ProgressionBar progress_bar;
     public override bool AddItem(GameObject obj)
     {
         
@@ -32,12 +32,16 @@ public class CookSurface : ItemSurface {
         {
             if (current_item.GetComponent<Utensil>())
             {
+                
                 Utensil current_utensil = current_item.GetComponent<Utensil>();
                 
                 if (current_utensil.current_food_items.Count > 0)
                 {
+                    progress_bar.gameObject.SetActive(true);
                     //start cooking if food is in the utensil
                     current_utensil.current_cooking_time += 1 * Time.deltaTime;
+                    progress_bar.CalculateProgress(current_utensil.current_cooking_time, current_utensil.cook_time);
+
                     if (current_utensil.current_cooking_time >= current_utensil.cook_time)
                     {
                         for(int i = 0; i < current_utensil.current_food_items.Count; i++)
@@ -46,6 +50,11 @@ public class CookSurface : ItemSurface {
                           
                         }
                     }
+                    if(current_utensil.current_cooking_time > current_utensil.cook_time + 2)
+                    {
+                        progress_bar.gameObject.SetActive(false);
+                    }
+
                     if (current_utensil.current_cooking_time >= current_utensil.burnt_timer)
                     {
                         for(int i = 0; i < current_utensil.current_food_items.Count; i++)
@@ -53,8 +62,18 @@ public class CookSurface : ItemSurface {
                             current_utensil.current_food_items[i].burnt = true;
                         }
                     }
+
+                }
+                else
+                {
+                    progress_bar.gameObject.SetActive(false);
                 }
             }
         }
+        else
+        {
+            progress_bar.gameObject.SetActive(false);
+        }
+
     }
 }
