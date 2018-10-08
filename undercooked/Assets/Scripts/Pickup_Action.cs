@@ -19,6 +19,7 @@ public class Pickup_Action : MonoBehaviour {
         if(pickup_object)
         {
             pickup_object.transform.position = transform.position;
+            pickup_object.transform.rotation = player.gameObject.transform.rotation;
         }
         if(current_cooldown >= 0.0f)
         {

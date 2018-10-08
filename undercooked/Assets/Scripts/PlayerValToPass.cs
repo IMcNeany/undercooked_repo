@@ -7,6 +7,7 @@ public class PlayerValToPass : MonoBehaviour {
     public int player = 0;
     public GameObject menuManager;
     private GameObject player_2;
+    public Sprite player2sprite;
     public bool test = true;
 
 	// Use this for initialization
@@ -31,6 +32,8 @@ public class PlayerValToPass : MonoBehaviour {
         else if(player == 2 && test)
         {
             player_2 = Instantiate(GameObject.FindGameObjectWithTag("Player"));
+            player_2.name = "Player2";
+            player_2.GetComponent<SpriteRenderer>().sprite = player2sprite;
             player_2.GetComponent<InputManager>().playerNumber = 2;
             test = false;
         }

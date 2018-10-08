@@ -31,6 +31,7 @@ public class FoodItem : Pickup {
         pickup_sprite = preped_sprite;
     }
 
+
     public void PrepareFood()
     {
         if(!prepared)
