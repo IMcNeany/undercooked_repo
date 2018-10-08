@@ -107,7 +107,7 @@ public class ItemSurface : MonoBehaviour {
         {
             for (int i = 0; i < utensil_pickup.current_food_items.Count; i++)
             {
-                if (!utensil_pickup.current_food_items[i].cooked)
+                if (!utensil_pickup.current_food_items[i].cooked || utensil_pickup.current_food_items[i].burnt)
                 {
                     return false;
                 }

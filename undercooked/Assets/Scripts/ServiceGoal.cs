@@ -29,7 +29,7 @@ public class ServiceGoal : MonoBehaviour {
 
     public void AddNewGoal()
     {
-        if(reference_list.Count < 4)
+        if(goal_list.Count < 4)
         {
             int random_num = Random.Range(0, reference_list.Count);
             goal_list.Add(reference_list[random_num]);
