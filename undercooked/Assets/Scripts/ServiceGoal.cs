@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ServiceGoal : MonoBehaviour {
 
@@ -10,6 +11,16 @@ public class ServiceGoal : MonoBehaviour {
 
     public float service_item_timer = 10.0f;
     public float current_timer = 10.0f;
+
+    public GameObject[] uiboxes;
+
+    private void Start()
+    {
+        for (int i = 0; i < uiboxes.Length; i++)
+        {
+            uiboxes[i].gameObject.SetActive(false);
+        }
+    }
 
     private void Update()
     {
@@ -33,7 +44,28 @@ public class ServiceGoal : MonoBehaviour {
         {
             int random_num = Random.Range(0, reference_list.Count);
             goal_list.Add(reference_list[random_num]);
+
+            uiboxes[goal_list.Count - 1].SetActive(true);
+
+            Text temp = uiboxes[goal_list.Count - 1].GetComponentInChildren<Text>();
+
+            if (random_num == 0)
+            {
+                temp.text = "Tomato Soup";
+            }
+
+            if (random_num == 1)
+            {
+                temp.text = "Burger";
+            }
+
+            if (random_num == 2)
+            {
+                temp.text = "Onion Soup";
+            }
         }
+
+
     }
 
     public bool CheckAddedItem(Utensil item)
