@@ -376,12 +376,12 @@ GameObject:
   - component: {fileID: 106378100}
   - component: {fileID: 106378099}
   m_Layer: 5
-  m_Name: Ticket 1
-  m_TagString: Ticket
+  m_Name: UIPanel (1)
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &106378098
 RectTransform:
   m_ObjectHideFlags: 0
@@ -398,13 +398,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -330, y: 100.79999}
   m_SizeDelta: {x: 210.3, y: -204.9}
-=======
-  m_AnchoredPosition: {x: -343.70007, y: 45.700012}
-  m_SizeDelta: {x: 0, y: 0}
->>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106378099
 MonoBehaviour:
@@ -721,12 +716,12 @@ GameObject:
   - component: {fileID: 195795324}
   - component: {fileID: 195795323}
   m_Layer: 5
-  m_Name: Ticket 0
-  m_TagString: Ticket
+  m_Name: UIPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &195795322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1342,7 +1337,6 @@ MonoBehaviour:
   - {fileID: 106378097}
   - {fileID: 2054184707}
   - {fileID: 1972602890}
-  service: 00000000
 --- !u!1 &334760599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,26 +3764,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: ticket.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: tickets.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: addScore.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: baseValue.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4614144349048218, guid: 52dda9e739c4d0748a35a3e3f2952206, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3882,76 +3856,6 @@ Prefab:
       propertyPath: itemGet
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: baseValue.Array.data[0]
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: baseValue.Array.data[1]
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: baseValue.Array.data[2]
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: baseValue.Array.data[3]
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: tickets.Array.data[0]
-      value: 
-      objectReference: {fileID: 195795321}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: tickets.Array.data[1]
-      value: 
-      objectReference: {fileID: 106378097}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: tickets.Array.data[2]
-      value: 
-      objectReference: {fileID: 2054184707}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: tickets.Array.data[3]
-      value: 
-      objectReference: {fileID: 1972602890}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: ticket
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: t_count
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: ticket.Array.data[0]
-      value: 
-      objectReference: {fileID: 195795321}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: ticket.Array.data[1]
-      value: 
-      objectReference: {fileID: 106378097}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: ticket.Array.data[2]
-      value: 
-      objectReference: {fileID: 2054184707}
-    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
-        type: 2}
-      propertyPath: ticket.Array.data[3]
-      value: 
-      objectReference: {fileID: 1972602890}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52dda9e739c4d0748a35a3e3f2952206, type: 2}
   m_IsPrefabAsset: 0
@@ -6024,12 +5928,12 @@ GameObject:
   - component: {fileID: 1972602893}
   - component: {fileID: 1972602892}
   m_Layer: 5
-  m_Name: Ticket 3
-  m_TagString: Ticket
+  m_Name: UIPanel (3)
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1972602891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6271,12 +6175,12 @@ GameObject:
   - component: {fileID: 2054184710}
   - component: {fileID: 2054184709}
   m_Layer: 5
-  m_Name: Ticket 2
-  m_TagString: Ticket
+  m_Name: UIPanel (2)
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2054184708
 RectTransform:
   m_ObjectHideFlags: 0

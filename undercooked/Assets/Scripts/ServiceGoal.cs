@@ -13,7 +13,6 @@ public class ServiceGoal : MonoBehaviour {
     public float current_timer = 10.0f;
 
     public GameObject[] uiboxes;
-    public bool[] service;
 
     private void Start()
     {
@@ -26,7 +25,6 @@ public class ServiceGoal : MonoBehaviour {
     private void Update()
     {
         current_timer += 1 * Time.deltaTime;
-
         if(current_timer >= service_item_timer)
         {
             AddNewGoal();
@@ -38,38 +36,18 @@ public class ServiceGoal : MonoBehaviour {
             //test
             goal_list.RemoveAt(goal_list.Count - 1);
         }
-        if (Input.GetKey(KeyCode.K))
-        {
-            //cheat for completing service (service bool's on inspector)
-            for (int j = 0; j < 4; j++)
-            {
-                if (service[j])
-                {
-                    this.gameObject.GetComponent<ScoreManager>().addScore[j] = true;
-                    RemoveGoalItem(j);
-                }
-            }
-        }
     }
 
     public void AddNewGoal()
     {
-        int next_empty_slot = 0;
-        for(int i = 0; i < 4; i++)
-        {
-            if(!uiboxes[i].activeInHierarchy)
-            {
-                uiboxes[i].SetActive(true);
-                next_empty_slot = i;
-                break;
-            }
-        }
         if(goal_list.Count < 4)
         {
             int random_num = Random.Range(0, reference_list.Count);
             goal_list.Add(reference_list[random_num]);
 
-            Text temp = uiboxes[next_empty_slot].GetComponentInChildren<Text>();
+            uiboxes[goal_list.Count - 1].SetActive(true);
+
+            Text temp = uiboxes[goal_list.Count - 1].GetComponentInChildren<Text>();
 
             if (random_num == 0)
             {
@@ -86,6 +64,8 @@ public class ServiceGoal : MonoBehaviour {
                 temp.text = "Onion Soup";
             }
         }
+
+
     }
 
     public bool CheckAddedItem(Utensil item)
@@ -100,14 +80,7 @@ public class ServiceGoal : MonoBehaviour {
                     {
                         if (item.current_food_items[y].type != goal_list[i].current_food_items[y].type)
                         {
-                            for (int j = 0; j < 4; j++)
-                            {
-                                if (service[j])
-                                {
-                                    this.gameObject.GetComponent<ScoreManager>().addScore[j] = true;
-                                    RemoveGoalItem(j);
-                                }
-                            }
+                            RemoveGoalItem(i);
                             return false;
                         }
                     }
