@@ -14,10 +14,17 @@ public class ScoreManager : MonoBehaviour
     public bool scoreIncreasing; //check score is increasing (may be irrelevant)
 
     [Header("Score Values for Cooking")]
-    public float baseValue = 100.0f; //base value of a recipe
-    public bool itemGet = false; //begins value countdown
-    public Text itemTest; //Showing value decrease (test)
-    public bool addScore = false;
+    //public bool itemGet = false; //begins value countdown
+    //public Text itemTest; //Showing value decrease (test)
+    //public bool[] addScore = { false, false, false, false };
+    //public float[] baseValue; //base value of a recipe
+    //public GameObject[] tickets;
+    //public int ticketCount; //number of active tickets
+
+    public bool[] addScore;
+    public float[] baseValue;
+    public GameObject[] ticket;
+    public int t_count = 4;
 
     [Header("Count Down Values")]
     [SerializeField]
@@ -52,10 +59,8 @@ public class ScoreManager : MonoBehaviour
     {
         GameTimer();
 
-        if (itemGet) //decreases value of recipe over time
-        {
-            ReduceItemValue();
-        }
+        t_count = GameObject.FindGameObjectsWithTag("Ticket").Length;
+        ReduceItemValue();
 
         FormatTimer();
 
@@ -94,17 +99,42 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private void ReduceItemValue()
+    private void ReduceItemValue() //[0,0,1,0]
     {
-        baseValue = baseValue -= pointsPerSecond * Time.deltaTime;
-
-        if (addScore == true)
+        for(int i = 0; i < 4; i++)
         {
-            scoreCount = scoreCount + baseValue;
-            baseValue = 100;
-            addScore = false;
-            itemGet = false;
+            if(ticket[i].activeInHierarchy)
+            {
+                baseValue[i] -= pointsPerSecond * Time.deltaTime;
+                
+                if(addScore[i])
+                {
+                    scoreCount += baseValue[i];
+                    baseValue[i] = 100.0f;
+                    addScore[i] = false;
+                    ticket[i].SetActive(false);
+                    this.gameObject.GetComponent<ServiceGoal>().service[i] = false;
+                }
+            }
         }
+
+        //for (int i = 0; i < ticketCount; i++) //check for each T
+        //{
+        //    if (tickets[i].activeInHierarchy) //if active
+        //    {
+        //        baseValue[i] -= pointsPerSecond * Time.deltaTime; //reduce count
+
+        //        if (addScore[i] == true) //if complete
+        //        {
+        //            scoreCount = scoreCount + baseValue[i];
+        //            addScore[i] = false;
+        //            itemGet = false;
+        //            tickets[i].SetActive(false);
+        //            //addScore, set checks to ! disable T
+        //        }
+        //    }
+        //}
+
     }
 
     private void FormatTimer()
@@ -139,7 +169,7 @@ public class ScoreManager : MonoBehaviour
         //display score values vvv
         scoreText.text = "Score: " + Mathf.Round(scoreCount);
         highScoreText.text = "High Score: " + Mathf.Round(highScoreCount);
-        itemTest.text = "Value = " + Mathf.Round(baseValue);
+        //itemTest.text = "Value = " + Mathf.Round(baseValue[0]);
         endScoreT.text = "Score: " + Mathf.Round(scoreCount);
         endHScoreT.text = "Highscore: " + Mathf.Round(highScoreCount);
     }
