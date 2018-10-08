@@ -15,14 +15,17 @@ public class ProgressionBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(progress > 0.9)
+        if (this.gameObject.activeSelf)
         {
-          barColour.color = Color.green;
-        }
-        else
-        {
-            barColour.color = Color.red;
-            progressBar.localScale = new Vector3(progress, 0.9f, 1.0f);
+            if (progress > 0.9)
+            {
+                barColour.color = Color.green;
+            }
+            else
+            {
+                barColour.color = Color.red;
+                progressBar.localScale = new Vector3(progress, 0.9f, 1.0f);
+            }
         }
 	}
 
