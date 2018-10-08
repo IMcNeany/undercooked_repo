@@ -287,89 +287,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 212650288047725176, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 50baf55d14b385b42984c16e9db11f1c,
-        type: 3}
-    - target: {fileID: 212650288047725176, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212650288047725176, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212650288047725176, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212650288047725176, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.8929987
-      objectReference: {fileID: 0}
-    - target: {fileID: 212650288047725176, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_DrawMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4834284610767140, guid: 0a77b1ace13dd7b48abe600a93f3cd6e, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4834284610767140, guid: 0a77b1ace13dd7b48abe600a93f3cd6e, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212650288047725176, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61743546955369076, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 5.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 61743546955369076, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 61743546955369076, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 61743546955369076, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4834284610767140, guid: 0a77b1ace13dd7b48abe600a93f3cd6e, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 212650288047725176, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4834284610767140, guid: 0a77b1ace13dd7b48abe600a93f3cd6e, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.19999999
-      objectReference: {fileID: 0}
     - target: {fileID: 1859043163412192, guid: 0a77b1ace13dd7b48abe600a93f3cd6e, type: 2}
       propertyPath: m_Name
       value: CookingPrep (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114547513384392624, guid: 0a77b1ace13dd7b48abe600a93f3cd6e, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a77b1ace13dd7b48abe600a93f3cd6e, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &93685830 stripped
@@ -599,7 +521,7 @@ RectTransform:
   m_Children:
   - {fileID: 1970685321}
   m_Father: {fileID: 1668585719}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2348,23 +2270,6 @@ Transform:
   m_Father: {fileID: 918962080}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &890216745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1859043163412192, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-    type: 2}
-  m_PrefabInternal: {fileID: 93685829}
---- !u!114 &890216747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 890216745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e242cc54935fcb34286670137ee46b44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  current_item: {fileID: 0}
 --- !u!1001 &894367842
 Prefab:
   m_ObjectHideFlags: 0
@@ -4515,8 +4420,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114547513384392624, guid: 0a77b1ace13dd7b48abe600a93f3cd6e, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a77b1ace13dd7b48abe600a93f3cd6e, type: 2}
   m_IsPrefabAsset: 0
 --- !u!114 &1714064365 stripped
@@ -4767,7 +4671,7 @@ RectTransform:
   m_Children:
   - {fileID: 213113352}
   m_Father: {fileID: 1668585719}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5005,23 +4909,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4394629314845810, guid: 082c7c40edd1d5b4f9bb80b6500da2d8,
     type: 2}
   m_PrefabInternal: {fileID: 2006991885}
---- !u!1 &2013467118 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1859043163412192, guid: 0a77b1ace13dd7b48abe600a93f3cd6e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1687907191}
---- !u!114 &2013467120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2013467118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e242cc54935fcb34286670137ee46b44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  current_item: {fileID: 0}
 --- !u!1001 &2022147617
 Prefab:
   m_ObjectHideFlags: 0
