@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MenuManager
+  - Ticket
   layers:
   - Default
   - TransparentFX
