@@ -70,20 +70,8 @@ public class ServiceGoal : MonoBehaviour {
 
             Text temp = uiboxes[next_empty_slot].GetComponentInChildren<Text>();
 
-            if (random_num == 0)
-            {
-                temp.text = "Tomato Soup";
-            }
-
-            if (random_num == 1)
-            {
-                temp.text = "Burger";
-            }
-
-            if (random_num == 2)
-            {
-                temp.text = "Onion Soup";
-            }
+            temp.text = reference_list[random_num].gameObject.name;
+           
         }
 
 
