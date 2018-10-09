@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PrepareSurface : ItemSurface {
 
+    public AudioClip chopping;
+    private AudioSource audio;
+
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     public override bool AddItem(GameObject obj)
     {
         if(!obj.GetComponent<FoodItem>())
@@ -43,6 +51,8 @@ public class PrepareSurface : ItemSurface {
                 }
                 else
                 {
+                    audio.clip = chopping;
+                    audio.Play();
                     food_item.PrepareFood();
                     return false;
                 }

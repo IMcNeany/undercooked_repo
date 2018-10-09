@@ -55,12 +55,6 @@ public class Pickup_Action : MonoBehaviour {
                         audio.clip = player.pickup;
                         audio.Play();
                     }
-                    else
-                    {
-                        //plays if you add item to a utensil
-                        audio.clip = player.pickup;
-                        audio.Play();
-                    }
                 }
             }
             else

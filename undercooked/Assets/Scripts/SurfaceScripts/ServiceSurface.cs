@@ -7,8 +7,14 @@ public class ServiceSurface : ItemSurface {
     public ScoreManager score_manager;
     public ServiceGoal service_goal;
 
+    public AudioClip incorrect;
+    public AudioClip correct;
+
+    private AudioSource audio;
+
     public void Start()
     {
+        audio = GetComponent<AudioSource>();
         service_goal = GameObject.Find("ScoreManager").GetComponent<ServiceGoal>();
     }
 
@@ -50,11 +56,14 @@ public class ServiceSurface : ItemSurface {
             {
                 if(service_goal.CheckAddedItem(current_item.GetComponent<Utensil>()))
                 {
+                    audio.clip = correct;
+                    audio.Play();
                     Destroy(current_item);
                 }
                 else
                 {
-                    Debug.Log("Nope");
+                    audio.clip = incorrect;
+                    audio.Play();
                     Destroy(current_item);
                 }
             }
