@@ -47,6 +47,7 @@ public class CookSurface : ItemSurface {
                         for(int i = 0; i < current_utensil.current_food_items.Count; i++)
                         {
                             current_utensil.current_food_items[i].cooked = true;
+                            current_utensil.current_food_items[i].GetComponent<SpriteRenderer>().sprite = current_utensil.current_food_items[i].preped_sprite;
                           
                         }
                     }
@@ -60,6 +61,7 @@ public class CookSurface : ItemSurface {
                         for(int i = 0; i < current_utensil.current_food_items.Count; i++)
                         {
                             current_utensil.current_food_items[i].burnt = true;
+                            current_utensil.current_food_items[i].GetComponent<SpriteRenderer>().color = Color.black;
                         }
                     }
 

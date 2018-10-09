@@ -38,7 +38,6 @@ public class ScoreManager : MonoBehaviour
     public GameObject twoStar;
     public GameObject threeStar;
 
-
     // Use this for initialization
     void Start()
     {

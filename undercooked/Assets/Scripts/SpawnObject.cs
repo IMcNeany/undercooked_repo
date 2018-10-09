@@ -61,6 +61,7 @@ public class SpawnObject : MonoBehaviour {
     public GameObject SpawnItem()
     {
         GameObject item = Instantiate(itemPrefab, transform.position, transform.rotation) as GameObject;
+        item.name = itemPrefab.name;
         return item;
     }
 }

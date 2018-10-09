@@ -55,9 +55,11 @@ MonoBehaviour:
   pickup_sprite: {fileID: 0}
   type: 1
   prepared: 0
+  cooked: 0
+  burnt: 0
   prepare_counter: 3
   unpreped_sprite: {fileID: 21300000, guid: f543e3e9e29bd0245aa2b253d419d3a1, type: 3}
-  preped_sprite: {fileID: 21300000, guid: 3838d3ccb1fa72248b5a5c7dd7575ad9, type: 3}
+  preped_sprite: {fileID: 21300000, guid: f7f49fd34e1b69c4bbf68a4c73527ff1, type: 3}
 --- !u!212 &212737193495248438
 SpriteRenderer:
   m_ObjectHideFlags: 1

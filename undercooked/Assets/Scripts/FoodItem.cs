@@ -29,6 +29,7 @@ public class FoodItem : Pickup {
     {
         prepared = true;
         pickup_sprite = preped_sprite;
+        GetComponent<SpriteRenderer>().sprite = pickup_sprite;
     }
 
 
