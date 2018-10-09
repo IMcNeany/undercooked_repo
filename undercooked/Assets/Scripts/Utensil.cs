@@ -23,7 +23,7 @@ public class Utensil : Pickup {
     public List<FoodItem> current_food_items;
     public float cook_time = 10.0f;
     public float current_cooking_time = 0.0f;
-    public float burnt_timer = 15.0f;
+    public float burnt_timer = 25.0f;
 
     public void Update()
     {

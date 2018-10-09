@@ -4621,7 +4621,7 @@ Prefab:
     - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
         type: 2}
       propertyPath: baseValue.Array.data[0]
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
         type: 2}
@@ -4658,6 +4658,11 @@ Prefab:
       propertyPath: ticket.Array.data[3]
       value: 
       objectReference: {fileID: 195795321}
+    - target: {fileID: 114094857193366030, guid: 52dda9e739c4d0748a35a3e3f2952206,
+        type: 2}
+      propertyPath: mainTimer
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52dda9e739c4d0748a35a3e3f2952206, type: 2}
   m_IsPrefabAsset: 0

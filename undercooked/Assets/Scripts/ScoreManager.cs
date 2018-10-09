@@ -134,15 +134,15 @@ public class ScoreManager : MonoBehaviour
         endCard.gameObject.SetActive(true);
         scoreCount = Mathf.RoundToInt(scoreCount);
 
-        if (scoreCount >= 100)
+        if (scoreCount >= 200)
         {
             oneStar.gameObject.SetActive(true);
         }
-        if (scoreCount >= 200)
+        if (scoreCount >= 400)
         {
             twoStar.gameObject.SetActive(true);
         }
-        if (scoreCount >= 300)
+        if (scoreCount >= 500)
         {
             threeStar.gameObject.SetActive(true);
         }
