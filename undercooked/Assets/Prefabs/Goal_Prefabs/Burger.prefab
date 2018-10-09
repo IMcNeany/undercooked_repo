@@ -178,7 +178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickup_sprite: {fileID: 0}
   type: 1
-  prepared: 1
+  prepared: 0
+  cooked: 1
+  burnt: 0
   prepare_counter: 3
   unpreped_sprite: {fileID: 0}
   preped_sprite: {fileID: 0}
@@ -196,6 +198,8 @@ MonoBehaviour:
   pickup_sprite: {fileID: 0}
   type: 3
   prepared: 1
+  cooked: 0
+  burnt: 0
   prepare_counter: 3
   unpreped_sprite: {fileID: 0}
   preped_sprite: {fileID: 0}
@@ -213,6 +217,8 @@ MonoBehaviour:
   pickup_sprite: {fileID: 0}
   type: 0
   prepared: 1
+  cooked: 0
+  burnt: 0
   prepare_counter: 3
   unpreped_sprite: {fileID: 0}
   preped_sprite: {fileID: 0}
@@ -230,6 +236,8 @@ MonoBehaviour:
   pickup_sprite: {fileID: 0}
   type: 2
   prepared: 1
+  cooked: 0
+  burnt: 0
   prepare_counter: 3
   unpreped_sprite: {fileID: 0}
   preped_sprite: {fileID: 0}
@@ -256,14 +264,12 @@ MonoBehaviour:
   - type: 3
     allowed: 1
   current_food_items:
+  - {fileID: 114545235904582942}
+  - {fileID: 114180686403677882}
   - {fileID: 114752838601799976}
   - {fileID: 114457077933897480}
-  - {fileID: 114180686403677882}
-  - {fileID: 114545235904582942}
   cook_time: 10
   current_cooking_time: 0
-  cooked: 1
-  burnt: 0
   burnt_timer: -5
 --- !u!212 &212093285910454652
 SpriteRenderer:

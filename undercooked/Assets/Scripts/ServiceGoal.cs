@@ -89,17 +89,11 @@ public class ServiceGoal : MonoBehaviour {
                     {
                         if (item.current_food_items[y].type != goal_list[i].current_food_items[y].type)
                         {
-                            for (int j = 0; j < 4; j++)
-                            {
-                                if (service[j])
-                                {
-                                    this.gameObject.GetComponent<ScoreManager>().addScore[j] = true;
-                                    RemoveGoalItem(j);
-                                    return false;
-                                }
-                            }
+                            
+                            return false;
                         }
                     }
+                    gameObject.GetComponent<ScoreManager>().addScore[i] = true;
                     return true;
                 }
             }

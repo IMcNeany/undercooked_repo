@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ServiceSurface : ItemSurface {
 
+    public ScoreManager score_manager;
     public ServiceGoal service_goal;
 
     public void Start()
@@ -49,7 +50,6 @@ public class ServiceSurface : ItemSurface {
             {
                 if(service_goal.CheckAddedItem(current_item.GetComponent<Utensil>()))
                 {
-                    Debug.Log("yeet");
                     Destroy(current_item);
                 }
                 else
