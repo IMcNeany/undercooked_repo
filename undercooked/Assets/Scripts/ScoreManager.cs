@@ -100,6 +100,15 @@ public class ScoreManager : MonoBehaviour
             {
                 baseValue[i] -= pointsPerSecond * Time.deltaTime;
 
+                if(baseValue[i] <= 0)
+                {
+                    baseValue[i] = 0;
+                    ticket[i].SetActive(false);
+                    this.gameObject.GetComponent<ServiceGoal>().service[i] = false;
+                    this.gameObject.GetComponent<ServiceGoal>().RemoveGoalItem(i);
+                    baseValue[i] = 100.0f;
+                }
+
                 if (addScore[i])
                 {
                     scoreCount += baseValue[i];
