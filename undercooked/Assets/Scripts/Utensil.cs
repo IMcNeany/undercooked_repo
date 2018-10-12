@@ -27,6 +27,10 @@ public class Utensil : Pickup {
 
     public void Update()
     {
+        if(current_food_items.Count <= 0)
+        {
+            ResetCookValues();
+        }
         for(int i = 0; i < current_food_items.Count; i++)
         {
             if(current_food_items[i])
