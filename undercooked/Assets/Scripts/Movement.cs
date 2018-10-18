@@ -25,10 +25,7 @@ public class Movement : MonoBehaviour {
     {
         InputManager input = GetComponent<InputManager>();
         movement = new Vector2(input.getHorizontal() * speed, input.getVertical() * speed);
-        if (movement == Vector2.zero)
-        {
-            rb2d.velocity = Vector2.zero;
-        }
+      
 
         if (movement != Vector2.zero) {
             Vector3 eulerRotation = Quaternion.LookRotation(Vector3.forward, movement).eulerAngles;
@@ -39,7 +36,8 @@ public class Movement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        rb2d.MovePosition(rb2d.position + movement * Time.fixedDeltaTime);
+          rb2d.MovePosition(rb2d.position + movement * Time.fixedDeltaTime);
+        
     }
 }
 

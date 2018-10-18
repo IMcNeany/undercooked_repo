@@ -88,7 +88,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -296,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickup_object: {fileID: 0}
   current_cooldown: 0.25
+  colliding: 0
 --- !u!212 &212419796650219734
 SpriteRenderer:
   m_ObjectHideFlags: 1

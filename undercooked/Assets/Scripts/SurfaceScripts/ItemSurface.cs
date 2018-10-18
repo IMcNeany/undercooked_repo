@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemSurface : MonoBehaviour {
 
     public GameObject current_item;
+    public bool on_fire;
 
     public virtual void Update()
     {
