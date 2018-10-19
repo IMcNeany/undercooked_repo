@@ -17,13 +17,9 @@ public class FEParticles : MonoBehaviour {
     {
         int numCollisionEvents = ps.GetCollisionEvents(other, collision_events);
 
-        if (other.GetComponent<ItemSurface>())
+        if (other.GetComponent<FireScript>())
         {
-            ItemSurface surface = other.GetComponent<ItemSurface>();
-            if(surface.fire)
-            {
-                Destroy(surface.fire);
-            }
+            Destroy(other); 
         }
         if (other.GetComponent<Player>())
         {
