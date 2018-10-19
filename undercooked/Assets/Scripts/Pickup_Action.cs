@@ -48,7 +48,7 @@ public class Pickup_Action : MonoBehaviour {
             if (collision.gameObject.GetComponent<ItemSurface>())
             {
                 ItemSurface surface = collision.gameObject.GetComponent<ItemSurface>();
-                if (surface.on_fire == false)
+                if (surface.fire == null)
                 {
                     if (surface.current_item == null && pickup_object != null)
                     {

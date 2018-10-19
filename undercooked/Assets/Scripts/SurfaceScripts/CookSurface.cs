@@ -6,6 +6,8 @@ public class CookSurface : ItemSurface {
 
     //no interact because you can pickup/place items/utensils whenever, the cooking happens when a utensil with food is added to the surface
     public ProgressionBar progress_bar;
+    public GameObject fire_prefab;
+    private bool fire_made = false;
     public override bool AddItem(GameObject obj)
     {
         
@@ -48,7 +50,7 @@ public class CookSurface : ItemSurface {
                         {
                             current_utensil.current_food_items[i].cooked = true;
                             current_utensil.current_food_items[i].GetComponent<SpriteRenderer>().sprite = current_utensil.current_food_items[i].preped_sprite;
-                          
+            
                         }
                     }
                     if(current_utensil.current_cooking_time > current_utensil.cook_time + 2)
@@ -62,7 +64,20 @@ public class CookSurface : ItemSurface {
                         {
                             current_utensil.current_food_items[i].burnt = true;
                             current_utensil.current_food_items[i].GetComponent<SpriteRenderer>().color = Color.black;
+                            if (!fire_made)
+                            {
+                                GameObject new_fire = Instantiate(fire_prefab, transform.position, transform.rotation) as GameObject;
+                                new_fire.name = "Fire";
+                                new_fire.transform.parent = transform;
+                                new_fire.GetComponent<FireScript>().fire_timer = 0.0f;
+                                fire = new_fire;
+                                fire_made = true;
+                            }
                         }
+                    }
+                    else
+                    {
+                        fire_made = false;
                     }
 
                 }

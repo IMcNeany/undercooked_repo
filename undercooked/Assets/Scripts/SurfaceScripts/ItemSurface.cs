@@ -5,13 +5,17 @@ using UnityEngine;
 public class ItemSurface : MonoBehaviour {
 
     public GameObject current_item;
-    public bool on_fire;
+    public GameObject fire;
 
     public virtual void Update()
     {
         if(current_item)
         {
             current_item.transform.position = transform.position;
+        }
+        if(fire)
+        {
+            fire.transform.position = transform.position;
         }
     }
 

@@ -20,9 +20,9 @@ public class FEParticles : MonoBehaviour {
         if (other.GetComponent<ItemSurface>())
         {
             ItemSurface surface = other.GetComponent<ItemSurface>();
-            if(surface.on_fire)
+            if(surface.fire)
             {
-                surface.on_fire = false;
+                Destroy(surface.fire);
             }
         }
         if (other.GetComponent<Player>())
