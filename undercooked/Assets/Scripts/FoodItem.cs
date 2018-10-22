@@ -32,6 +32,10 @@ public class FoodItem : Pickup {
         GetComponent<SpriteRenderer>().sprite = pickup_sprite;
     }
 
+    public int GetCurrentPrep()
+    {
+        return current_prepared;
+    }
 
     public void PrepareFood()
     {

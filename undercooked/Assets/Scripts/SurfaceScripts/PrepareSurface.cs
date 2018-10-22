@@ -5,6 +5,7 @@ using UnityEngine;
 public class PrepareSurface : ItemSurface {
 
     public AudioClip chopping;
+    public ProgressionBar progressBar;
     private AudioSource audio;
 
     void Start()
@@ -43,14 +44,17 @@ public class PrepareSurface : ItemSurface {
                     case FoodType.Onion:
                     case FoodType.Tomato:
                         //can prepare these items so continue
+                        progressBar.gameObject.SetActive(true);
                         break;
                 }
                 if (food_item.prepared)
                 {
+                    progressBar.gameObject.SetActive(false);
                     return true;
                 }
                 else
                 {
+                    progressBar.CalculateProgress(food_item.GetCurrentPrep(), food_item.prepare_counter);
                     audio.clip = chopping;
                     audio.Play();
                     food_item.PrepareFood();

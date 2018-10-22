@@ -236,7 +236,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current_item: {fileID: 0}
+  fire: {fileID: 0}
   chopping: {fileID: 8300000, guid: acbae2696c3f39a489ad7c3b67e9854e, type: 3}
+  progressBar: {fileID: 114693881989776150}
 --- !u!114 &114693881989776150
 MonoBehaviour:
   m_ObjectHideFlags: 1
