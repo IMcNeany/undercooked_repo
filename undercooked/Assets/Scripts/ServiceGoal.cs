@@ -58,7 +58,7 @@ public class ServiceGoal : MonoBehaviour {
         {
             if (!uiboxes[i].activeInHierarchy)
             {
-                uiboxes[i].SetActive(true);
+               // uiboxes[i].SetActive(true);
                 next_empty_slot = i;
                 break;
             }
@@ -67,7 +67,8 @@ public class ServiceGoal : MonoBehaviour {
         {
             int random_num = Random.Range(0, reference_list.Count);
             goal_list.Add(reference_list[random_num]);
-
+            uiboxes[next_empty_slot].GetComponent<Ticket>().objectToCreate = reference_list[random_num];
+            uiboxes[next_empty_slot].SetActive(true);
             Text temp = uiboxes[next_empty_slot].GetComponentInChildren<Text>();
 
             temp.text = reference_list[random_num].gameObject.name;
