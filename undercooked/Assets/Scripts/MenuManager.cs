@@ -43,7 +43,7 @@ public class MenuManager : MonoBehaviour
     {
         if (gameStart == true)
         {
-            SceneManager.LoadScene("Level2");
+     //       SceneManager.LoadScene("Level2");
         }
         else
         {

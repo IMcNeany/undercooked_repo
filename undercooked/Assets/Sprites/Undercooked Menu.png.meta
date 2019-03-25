@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: e13f3c7505c4dfa4483945ce83103d6f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Undercooked Menu_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -93,11 +94,31 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Undercooked Menu_2
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 247
+        width: 697
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733414e6912b6c64784f9a8f2a5cb2c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f90227573df04944593e731eb1c1654b
     vertices: []
     indices: 
     edges: []
